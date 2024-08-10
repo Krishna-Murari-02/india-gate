@@ -61,8 +61,7 @@ export default {
         popup: '0 0 10px 5px rgba(0, 0, 0, 0.1)',
       },
       fontFamily: {
-        sans: [ 'Inter'],
-
+        sans: ['Roboto', 'sans-serif'],
       },
       backgroundImage: {
         'custom-bg': "url('./assets/images/background.png')", // Replace with your image path
