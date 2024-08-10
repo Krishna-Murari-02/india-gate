@@ -9,7 +9,7 @@ const Sidebar = () => {
       </div>
 
       {/* Bottom div */}
-      <div className="flex justify-end  w-[50%] absolute right-10 top-40 ">
+      <div className="flex justify-end  w-[50%] absolute right-20 top-40 ">
         <div className="flex flex-col gap-24 text-center text-white items-end">
           <img
             src="./assets/images/logo-1.png"
