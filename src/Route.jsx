@@ -1,11 +1,7 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  BrowserRouter,
-} from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
 import Home from "./routes/home.jsx";
+import Register from "./routes/register.jsx";
 
 const AppRouter = () => {
   return (
@@ -13,7 +9,7 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/h1" element={<h1>This is heading 1</h1>} />
+          <Route path="/register" element={<Register />} />
 
           {/* <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />

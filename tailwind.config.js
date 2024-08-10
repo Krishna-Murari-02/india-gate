@@ -61,12 +61,24 @@ export default {
         // sans: ['Roboto', 'sans-serif'],
         OpenSans: ["Open Sans", "sans-serif"],
         Antonio: ["Antonio", "sans-serif"],
+        Inter: ["Inter", "sans-serif"],
       },
       backgroundImage: {
         "custom-bg": "url('./assets/images/background.png')", // Replace with your image path
-        girl: "url('./assets/images/girl.png')", // Replace with your image path
+
+        "custom-gradient":
+          "linear-gradient(to right, #682E21 0%, #7E4B3F 80%, #682E21 100%)",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".text-shadow-custom": {
+          textShadow: "3px 6px #682E21",
+        },
+      };
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
+  ],
 };
