@@ -2,6 +2,8 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
 import Home from "./routes/home.jsx";
 import Register from "./routes/register.jsx";
+import Otp from "./routes/otp.jsx";
+import Thankyou from "./routes/thank-you.jsx";
 
 const AppRouter = () => {
   return (
@@ -10,10 +12,10 @@ const AppRouter = () => {
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/otp" element={<Otp />} />
+          <Route path="/thank-you" element={<Thankyou />} />
 
-          {/* <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} /> */}
+       
         </Route>
       </Routes>
     </BrowserRouter>
