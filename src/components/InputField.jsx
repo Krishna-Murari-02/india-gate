@@ -12,7 +12,7 @@ const InputField = ({ text, icon, className }) => {
         type="text"
         placeholder={text}
 
-        className={`flex-1 bg-transparent border-none px-2 py-1 rounded-[px] placeholder-custom text-[#9e5241] placeholder-custom  outline-none text-[16px] font-normal font-Inter`}
+        className={`flex-1 bg-transparent border-none px-2 py-1 rounded-[px] placeholder-custom text-[#682E21] placeholder-custom  outline-none text-[16px] font-normal font-Inter`}
       />
     </div>
   );

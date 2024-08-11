@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 const Layout = () => {
   return (
     <div>
-      <div className="relative h-[100vh] bg-custom-bg bg-cover bg-center overflow-hidden">
+      <div className="relative h-[100vh] bg-custom-bg-2 md:bg-custom-bg bg-cover bg-center overflow-hidden">
         <Sidebar />
         <Outlet />
         <Footer />
