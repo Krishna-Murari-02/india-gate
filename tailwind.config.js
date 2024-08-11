@@ -4,7 +4,7 @@ export default {
   theme: {
     screens: {
       sm: "570px",
-      md: "768px",
+      md: "856px",
       lg: "1024px",
       xl: "1170px",
       // '2xl': '1536px',
@@ -61,12 +61,25 @@ export default {
         // sans: ['Roboto', 'sans-serif'],
         OpenSans: ["Open Sans", "sans-serif"],
         Antonio: ["Antonio", "sans-serif"],
+        Inter: ["Inter", "sans-serif"],
       },
       backgroundImage: {
         "custom-bg": "url('./assets/images/background.png')", // Replace with your image path
-        girl: "url('./assets/images/girl.png')", // Replace with your image path
+        "custom-bg-2": "url('./assets/images/background-2.png')", // Replace with your image path
+
+        "custom-gradient":
+          "linear-gradient(to right, #682E21 0%, #895b51 50%, #682E21 100%)",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".text-shadow-custom": {
+          textShadow: "3px 6px #682E21",
+        },
+      };
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
+  ],
 };

@@ -1,9 +1,11 @@
 const Footer = () => {
   return (
     <div className="container hidden md:block">
-      <div className=" absolute bottom-0 left-0 w-full bg-[#682E21] opacity-80 h-16 flex items-center justify-between px-16">
+      <div className=" absolute bottom-0 left-0 w-full bg-[#682E21] bg-opacity-60 h-[75px] items-center justify-between px-20 hidden md:flex">
         <div className="flex justify-between text-white gap-[50px]">
-          <a href="">About Us</a>
+          <a href="" className="font-Inter text-[16px] font-normal">
+            About Us
+          </a>
           <a href="">Privacy Policy</a>
           <a href="">Terms and Conditions</a>
         </div>

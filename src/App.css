@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+  backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
+  z-index: -1; /* Place behind other content */
+}
+

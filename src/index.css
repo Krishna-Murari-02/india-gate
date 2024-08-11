@@ -73,3 +73,9 @@
 .CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-trail {
     stroke: transparent;
 }
+
+.placeholder-custom::placeholder {
+    color: #682E21;
+    /* Set the placeholder color to black */
+}
+

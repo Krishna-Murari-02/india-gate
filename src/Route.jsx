@@ -4,6 +4,10 @@ import Home from "./routes/home.jsx";
 import ThankYou from "./components/ThankYou.jsx";
 import Congratulations from "./components/Congratulations.jsx";
 
+import Register from "./routes/register.jsx";
+import Otp from "./routes/otp.jsx";
+// import Thankyou from "./routes/thank-you.jsx";
+
 const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -12,10 +16,9 @@ const AppRouter = () => {
           <Route path="/" element={<Home />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/congratulations" element={<Congratulations />} />
-
-          {/* <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} /> */}
+          <Route path="/register" element={<Register />} />
+          <Route path="/otp" element={<Otp />} />
+          {/* <Route path="/thank-you" element={<Thankyou />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
