@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="container">
+    <div className="container hidden md:block">
       <div className=" absolute bottom-0 left-0 w-full bg-[#682E21] opacity-80 h-16 flex items-center justify-between px-16">
         <div className="flex justify-between text-white gap-[50px]">
           <a href="">About Us</a>
