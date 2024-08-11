@@ -59,7 +59,7 @@ const Sidebar = () => {
       </div>
 
       {/* Bottom div */}
-      <div className="flex justify-center items-center flex-col w-full md:w-[33%] absolute md:right-1 bottom-28 md:bottom-0 md:top-[-46px] gap-5">
+      <div className="flex justify-center items-center flex-col w-full md:w-[33%] absolute md:right-1 bottom-28 md:bottom-0 md:top-[-100px] gap-5">
         <div className="flex flex-col gap-24 text-center text-white items-end">
           <img
             src="./assets/images/logo-1.png"
