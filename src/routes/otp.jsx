@@ -1,15 +1,29 @@
 import { useState } from "react";
 import Button from "../components/Button";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import axios from "../instance.js";
+import { error, success } from "../helper/hottoast.js";
 
 const Otp = () => {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const phone = searchParams.get("phone");
   const [otp, setOtp] = useState(["", "", "", ""]);
-  
+
   const update = (e, i) => {
     setOtp((otp) => {
       const newOtp = [...otp];
       newOtp[i] = e.target.value;
       return newOtp;
     });
+  };
+  console.log("data", phone, otp);
+  const buttonDisable = () => {
+    const hasEmptyValue = otp.some((value) => value === "");
+    if (hasEmptyValue) {
+      return true;
+    }
+    return false;
   };
 
   const focusNext = (e) => {
@@ -26,6 +40,29 @@ const Otp = () => {
       return e.target.previousSibling.focus();
     if (e.key.length !== 1) return;
     if (Number.isNaN(Number(e.key)) || e.key === " ") e.preventDefault();
+  };
+
+  const varifyOTP = async () => {
+    const inputObject = {
+      phone,
+      otp: otp.join(""),
+    };
+    if (buttonDisable()) {
+      success("Please fill OTP.");
+      return;
+    }
+    try {
+      const response = await axios.post("/otp/verify-otp", inputObject);
+      // sessionStorage.setItem("user_isVerified", response.data.msg.isVerified);
+      if (response.status === 200) {
+        success(response.data.msg);
+        navigate("/thank-you");
+        return;
+      }
+    } catch (err) {
+      error("Invalid OTP");
+      return;
+    }
   };
 
   return (
@@ -58,9 +95,14 @@ const Otp = () => {
             />
           ))}
         </div>
-        <Button text={`verify`} className={`hidden md:flex`} />
+        <Button
+          onClick={varifyOTP}
+          text={`verify`}
+          className={`hidden md:flex`}
+        />
       </div>
       <Button
+        onClick={varifyOTP}
         text={`verify`}
         className="!w-[80%] !mx-auto absolute bottom-0 left-0 right-0 flex justify-center mb-6 md:hidden"
       />

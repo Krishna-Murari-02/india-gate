@@ -1,12 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { error } from "../helper/hottoast";
+import axios from "../instance.js";
 
 const Sidebar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  console.log(isMenuOpen)
+  const [userCount, setuserCount] = useState(1000);
+  const userCountCalculation = async () => {
+    const response = await axios.get("/user/user-count");
+
+    if (response.status === 200) {
+      setuserCount(userCount + response.data.msg);
+    }
+  };
+
+  useEffect(() => {
+    userCountCalculation();
+  }, []);
 
   const toggleMenu = () => {
-    console.log('object')
-    setIsMenuOpen(prev => !prev);
+    console.log("object");
+    setIsMenuOpen((prev) => !prev);
   };
   return (
     <div className="flex flex-col mt-[37px]">
@@ -29,19 +42,19 @@ const Sidebar = () => {
           <ul className="flex flex-col space-y-2">
             <li>
               <a href="#link1" className="text-black text-lg">
-               About us
+                About us
               </a>
             </li>
             <div className="border-[1px] border-[#8E8E8E] rounded-lg"></div>
             <li>
               <a href="#link2" className="text-black text-lg">
-              Privacy Policy
+                Privacy Policy
               </a>
             </li>
             <div className="border-[1px] border-[#8E8E8E] rounded-lg"></div>
             <li>
               <a href="#link2" className="text-black text-lg">
-              T&C
+                T&C
               </a>
             </li>
           </ul>
@@ -72,7 +85,7 @@ const Sidebar = () => {
             </p>
             <div className="flex flex-col mt-[-10px] md:mt-[-20px]">
               <p className="text-shadow-custom text-[62px] md:text-[120px] font-bold font-Antonio md:h-[160px]">
-                99572
+                {userCount}
               </p>
               <p className="text-white font-Inter text-[12px] md:text-[20px] font-bold">
                 and counting...
