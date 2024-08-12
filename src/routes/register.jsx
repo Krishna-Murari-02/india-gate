@@ -64,36 +64,60 @@ const Register = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center md:justify-start items-center w-full md:w-[344px] absolute left-0 md:left-20 gap-7 top-40 px-4 md:px-0">
-        <img
-          className="w-[160px] h-[200px] hidden md:flex"
-          src="./assets/images/logo-2.png"
-          alt=""
-        />
-        <p className="text-[18px] md:text-[24px] text-white text-center font-bold font-OpenSans mt-[112px] md:mt-0">
-          Enter your details to get your pledge certificate
-        </p>
+      <div className="flex flex-col md:flex-row justify-between p-[52px] h-[65vh] md:h-full md:pt-20 md:pb-40">
+        <div className="flex flex-col justify-center md:justify-start items-center w-full md:w-[344px]  left-0 md:left-20 gap-7 top-40 px-4 md:px-0">
+          <img
+            className="w-[160px] h-[200px] hidden md:flex"
+            src="./assets/images/logo-2.png"
+            alt=""
+          />
+          <p className="text-[18px] md:text-[24px] text-white text-center font-bold font-OpenSans  md:mt-0">
+            Enter your details to get your pledge certificate
+          </p>
 
-        <InputField
-          text={"Enter full name"}
-          icon={`./assets/icons/user.png`}
-          className="!h-4 !w-4"
-          onChange={(e) =>
-            setInputObject({ ...inputObject, name: e.target.value })
-          }
-        />
-        <InputField
-          onChange={(e) =>
-            setInputObject({ ...inputObject, phone: e.target.value })
-          }
-          text={"Enter mobile number"}
-          icon={`./assets/icons/phone.png`}
-        />
-        <Button
-          onClick={registerUserDate}
-          text={`get certificate`}
-          className={`hidden md:flex`}
-        />
+          <InputField
+            text={"Enter full name"}
+            icon={`./assets/icons/user.png`}
+            className="!h-4 !w-4"
+            onChange={(e) =>
+              setInputObject({ ...inputObject, name: e.target.value })
+            }
+          />
+          <InputField
+            onChange={(e) =>
+              setInputObject({ ...inputObject, phone: e.target.value })
+            }
+            text={"Enter mobile number"}
+            icon={`./assets/icons/phone.png`}
+          />
+          <Button
+            onClick={registerUserDate}
+            text={`get certificate`}
+            className={`hidden md:flex`}
+          />
+        </div>
+        <div className="flex flex-col justify-center md:justify-start items-cente  w-full md:w-[344px]   left-0 md:left-20 gap-9 top-40 px-4 md:px-0">
+          <div className="flex flex-col gap-24 text-center text-white items-center">
+            <img
+              src="./assets/images/logo-1.png"
+              className="h-[250px] w-[250px] hidden md:flex "
+              alt=""
+            />
+            <div className="text-white text-center md:text-right bg-black bg-opacity-50 md:bg-transparent px-6 py-2 rounded-xl">
+              <p className="text-white font-Inter text-[12px] md:text-[20px] font-bold ">
+                Pledges so far
+              </p>
+              <div className="flex flex-col mt-[-10px] md:mt-[-20px]">
+                <p className="text-shadow-custom text-[62px] md:text-[120px] font-bold font-Antonio md:h-[160px]">
+                  {"1000"}
+                </p>
+                <p className="text-white font-Inter text-[12px] md:text-[20px] font-bold">
+                  and counting...
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <Button
         onClick={registerUserDate}

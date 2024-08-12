@@ -97,7 +97,7 @@ const CertificateSidebar = ({ certificateUrl }) => {
       <div className="flex justify-center items-center flex-col w-full md:w-[33%] absolute md:right-1 bottom-28 md:bottom-0 md:top-[-46px]  gap-5">
         <img
           className=" md:w-96 md:p-0"
-          src={certificateUrl}
+          src={`./assets/images/certificate.png`}
           alt="certificate image"
         />
         <Button

@@ -17,28 +17,9 @@ const Congratulations = () => {
   const [isShared, setIsShared] = useState(true);
 
   return (
-    <div className="md:px-[60px] md:pt-[216px] md:pb-[133px] flex flex-col items-center md:flex-row md:justify-between">
-      <div className="md:hidden flex justify-between w-full pl-5 pr-4 pt-5 ">
-        <img
-          className="h-16 mt-[-px] md:m-0 block md:hidden"
-          src="assets/images/india-gate-logo.png"
-          alt=""
-        />
+    <div className="flex flex-col md:flex-row justify-between p-[52px] h-[65vh] md:h-full md:pt-20 md:pb-40">
 
-        <img
-          className="h-11 block md:hidden"
-          src="assets/svgs/menu-dots.svg"
-          alt="menu-dots"
-        />
-      </div>
-
-      <img
-        className="-mt-2   block md:hidden mb-5  h-[98px] [text-shadow:_0_0.86px_6.85px_#ECDEDB52]"
-        src="/assets/images/grains-of-hope.png"
-        alt="grains-of-hope"
-      />
-
-      <div className="px-6 md:p-0 flex flex-col items-center  gap-[12.5px] md:gap-5 flex-1 max-w-[400px] ">
+      <div className="px-6 md:p-0 flex flex-col items-center  gap-[12.5px] md:gap-5 flex-1 md:max-w-[400px] ">
         <img
           className="hidden md:block  h-48 mb-7"
           src="assets/images/india-gate-logo.png"
@@ -93,14 +74,14 @@ const Congratulations = () => {
                 className="w-7 h-7 hover:cursor-pointer hover:scale-110 transition-all delay-150 duration-150 ease-in"
                 alt=""
               />
-              <WhatsappShareButton url={certificateUrl} title={"Certificate"}>
+              <WhatsappShareButton url={'certificateUrl'} title={"Certificate"}>
                 <img
                   src="./assets/images/icon-two.png"
                   className="w-[24px] h-[24px] hover:cursor-pointer hover:scale-110 transition-all delay-150 duration-150 ease-in"
                   alt=""
                 />
               </WhatsappShareButton>
-              <LinkedinShareButton url={certificateUrl} title={"Certificate"}>
+              <LinkedinShareButton url={'certificateUrl'} title={"Certificate"}>
                 <img
                   src="./assets/images/icon-three.png"
                   className="w-[24px] h-[24px] hover:cursor-pointer hover:scale-110 transition-all delay-150 duration-150 ease-in"

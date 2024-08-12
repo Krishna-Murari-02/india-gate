@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CertificateSidebar from "../components/CertificateSidebar";
 import Button from "../components/Button";
+import Footer from "../components/Footer";
 
 function Congratulation() {
     
@@ -8,7 +9,7 @@ function Congratulation() {
     sessionStorage.getItem("user_url")
   );
   return (
-    <div className="relative min-h-screen md:min-h-screen bg-custom-bg-2 md:bg-custom-bg bg-cover bg-center overflow-y-scroll  ">
+    <div className="relative min-h-screen md:min-h-screen bg-custom-bg-2 md:bg-custom-bg bg-cover bg-center overflow-y-scroll">
       <CertificateSidebar certificateUrl={certificateUrl} />
       <>
         <div className="flex flex-col justify-center md:justify-start items-center w-full md:w-[344px] absolute left-0 md:left-20 gap-7 top-40 px-4 md:px-0">
@@ -31,7 +32,7 @@ function Congratulation() {
         </div>
       </>
       {/* <Outlet /> */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

@@ -22,10 +22,11 @@ const AppRouter = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/verify-otp" element={<Otp />} />
           <Route path="/thank-you" element={<Thankyou />} />
+          <Route path="/congratulation" element={<Congratulation />} />
         </Route>
       </Routes>
       <Routes>
-        <Route path="/congratulation" element={<Congratulation />} />
+
       </Routes>
     </BrowserRouter>
   );
